@@ -7,7 +7,7 @@ import api from "../config/axios";
 const NewsContextProvider=({children})=>{
     const[news,setnews]=useState([])
     
-    const fetchNews=async(url="/api/news?q=india")=>{
+    const fetchNews=async(url="/news?q=india")=>{
         try {
         const result=await api.get(url)
        return result.data
