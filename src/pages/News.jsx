@@ -8,7 +8,7 @@ const News = ({ classname }) => {
   
     const getnews=async()=>{
         const response=await fetchNews()
-      setnews(response.articles)
+      setnews(response?.articles)
     }
 
 
@@ -20,7 +20,7 @@ useEffect(()=>{
   return (
     <Wrapper>
       <div className={`grid grid-cols-4 gap-5 ${classname}`}>
-        {news.map((item,index)=>{
+        {(news||[]).map((item,index)=>{
                 if(!item.urlToImage){
                     return null
                    }

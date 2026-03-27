@@ -11,11 +11,12 @@ const Navbar = ({classname}) => {
     
     const getdata=async()=>{
         const res=await fetchNews(`/everything?q=${searchvalue}`)
-        console.log(res.articles)
-        setnews(res.articles)
+        console.log(res?.articles)
+        setnews(res?.articles)
     }
 
     useEffect(()=>{
+         if (!searchvalue.trim()) return
         const timer=setTimeout(()=>{
             getdata()
 
