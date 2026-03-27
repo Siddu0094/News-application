@@ -10,7 +10,7 @@ const Navbar = ({classname}) => {
 
     
     const getdata=async()=>{
-        const res=await fetchNews(`/everything?q=${searchvalue}`)
+        const res=await fetchNews(`/news?q=${searchvalue}`)
         console.log(res?.articles)
         setnews(res?.articles)
     }
